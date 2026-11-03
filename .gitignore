@@ -4,12 +4,13 @@
 !/.gitignore
 !/CLAUDE.md
 !/README.md
-!/PROJECTS.md
 !/.claude/
 !/_shared/
 !/_templates/
 !/_scripts/
 
 # Personal / machine-local files
+# PROJECTS.md is the private project list; it is ignored by /* above.
+# Its format lives in _templates/PROJECTS.md, which is tracked.
 CLAUDE.local.md
 .claude/settings.local.json

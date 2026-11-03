@@ -4,11 +4,12 @@ A workspace for agentic coding with Claude Code. Each top-level folder is one pr
 
 ```
 CLAUDE.md            Rules for every project (Claude loads parent CLAUDE.md files automatically)
-PROJECTS.md          List of projects
+PROJECTS.md          List of projects (private, gitignored; created from _templates/PROJECTS.md)
 .claude/             Used only when Claude is started here at the root (the /new-project skill)
 _shared/             Local plugin marketplace "claude-projects"
   plugins/workspace-core/   Skills, agents and hooks shared by every project
 _templates/project/  Starter copied into each new project
+_templates/PROJECTS.md  Format of PROJECTS.md (header and columns)
 _scripts/            Helper scripts (new-project.ps1)
 <project>/           A project: its own git repo, CLAUDE.md, .claude/skills, .claude/agents
 ```
@@ -52,4 +53,4 @@ claude plugin install workspace-core@claude-projects --scope user
 - `my-app/CLAUDE.local.md`: personal notes (gitignored)
 
 ## Git
-The root is a git repo that tracks only the shared setup. Its `.gitignore` excludes every project folder. Each project has its own repo, created by `new-project.ps1`. A project must be a git repo; otherwise Claude treats the root as its repo root.
+The root is a git repo that tracks only the shared setup. Its `.gitignore` excludes every project folder and `PROJECTS.md`, so the list of your projects stays on your machine. To change the list's columns for new users, edit `_templates/PROJECTS.md`; existing `PROJECTS.md` files aren't updated automatically. Each project has its own repo, created by `new-project.ps1`. A project must be a git repo; otherwise Claude treats the root as its repo root.

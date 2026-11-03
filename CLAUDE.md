@@ -6,7 +6,7 @@ Each top-level folder that doesn't start with `_` is a separate project and its 
 - `_shared/` is a local plugin marketplace. The `workspace-core` plugin holds the skills and agents shared across projects.
 - `_templates/project/` is the starter that new projects are copied from.
 - `_scripts/new-project.ps1` creates a project. When Claude is started at the root, use `/new-project` instead.
-- `PROJECTS.md` lists every project.
+- `PROJECTS.md` lists every project. It is private and gitignored, so never commit it or un-ignore it. Its format is in `_templates/PROJECTS.md`, and `new-project.ps1` creates it from that template when it's missing.
 
 ## Working in a project
 - Before making changes, read the project's `CLAUDE.md` and anything relevant in its `docs/`.

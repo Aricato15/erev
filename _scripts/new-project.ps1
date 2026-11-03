@@ -22,7 +22,8 @@ $ErrorActionPreference = 'Stop'
 $root     = Split-Path -Parent $PSScriptRoot
 $template = Join-Path $root '_templates\project'
 $dest     = Join-Path $root $Name
-$index    = Join-Path $root 'PROJECTS.md'
+$index    = Join-Path $root 'PROJECTS.md'            # private, gitignored
+$indexTpl = Join-Path $root '_templates\PROJECTS.md' # tracked format
 
 # --- validate ---------------------------------------------------------------
 if ($Name -notmatch '^[a-z0-9]+(-[a-z0-9]+)*$') {
@@ -73,7 +74,13 @@ $desc = ($Description -replace '\r?\n', ' ') -replace '\|', '/'
 $stk  = ($Stack -replace '\r?\n', ' ') -replace '\|', '/'
 $row  = "| [$Name]($Name/) | $desc | $stk | active | $today |"
 $existing = ''
-if (Test-Path $index) { $existing = [System.IO.File]::ReadAllText($index) }
+if (Test-Path $index) {
+    $existing = [System.IO.File]::ReadAllText($index)
+} elseif (Test-Path $indexTpl) {
+    $existing = [System.IO.File]::ReadAllText($indexTpl)
+} else {
+    Write-Warning "Template not found: $indexTpl. Creating PROJECTS.md without a header."
+}
 if ($existing -and -not $existing.EndsWith("`n")) { $existing += "`r`n" }
 [System.IO.File]::WriteAllText($index, $existing + $row + "`r`n", $utf8NoBom)
 
