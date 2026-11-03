@@ -1,0 +1,15 @@
+# The root repo tracks only the shared workspace setup.
+# Every project folder is ignored here because each one is its own git repo.
+/*
+!/.gitignore
+!/CLAUDE.md
+!/README.md
+!/PROJECTS.md
+!/.claude/
+!/_shared/
+!/_templates/
+!/_scripts/
+
+# Personal / machine-local files
+CLAUDE.local.md
+.claude/settings.local.json

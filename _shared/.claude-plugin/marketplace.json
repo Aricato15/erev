@@ -1,0 +1,16 @@
+{
+  "name": "claude-projects",
+  "owner": {
+    "name": "avocato15"
+  },
+  "metadata": {
+    "description": "Shared skills, agents and hooks for projects in D:\\claude_projects"
+  },
+  "plugins": [
+    {
+      "name": "workspace-core",
+      "source": "./plugins/workspace-core",
+      "description": "Workspace-wide skills and agents used by every project"
+    }
+  ]
+}

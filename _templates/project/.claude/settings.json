@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
+  "extraKnownMarketplaces": {
+    "claude-projects": {
+      "source": {
+        "source": "directory",
+        "path": "D:/claude_projects/_shared"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "workspace-core@claude-projects": true
+  }
+}
