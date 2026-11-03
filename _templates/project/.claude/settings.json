@@ -15,7 +15,7 @@
     "claude-projects": {
       "source": {
         "source": "directory",
-        "path": "D:/claude_projects/_shared"
+        "path": "../_shared"
       }
     }
   },

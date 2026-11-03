@@ -1,4 +1,4 @@
-# Workspace: D:\claude_projects
+# Workspace: claude_projects (this folder is the workspace root)
 
 Each top-level folder that doesn't start with `_` is a separate project and its own git repo. This file is loaded in every project's sessions, so it holds only rules that apply everywhere. Rules for a single project go in that project's own `CLAUDE.md`.
 

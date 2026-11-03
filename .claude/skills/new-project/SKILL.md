@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: Create a new project folder in D:\claude_projects from the workspace template (CLAUDE.md, .claude/ skills/agents/rules, docs/, its own git repo) and register it in PROJECTS.md. Use when the user wants to start, scaffold or add a new project or application.
+description: Create a new project folder in the workspace root from the workspace template (CLAUDE.md, .claude/ skills/agents/rules, docs/, its own git repo) and register it in PROJECTS.md. Use when the user wants to start, scaffold or add a new project or application.
 argument-hint: "[project-name]"
 ---
 

@@ -1,6 +1,6 @@
 # workspace-core
 
-Skills and agents shared by every project in `D:\claude_projects`. The plugin is installed at user scope from the local `claude-projects` marketplace (`D:\claude_projects\_shared`), and each project's `.claude/settings.json` also enables it.
+Skills and agents shared by every project in this workspace. The plugin is installed at user scope from the local `claude-projects` marketplace (`_shared/` at the workspace root), and each project's `.claude/settings.json` also enables it.
 
 - `skills/handoff`: `/workspace-core:handoff` writes a session handoff note to the project's `docs/notes/`.
 - `skills/commit`: `/workspace-core:commit` reviews the staged changes, proposes a Conventional Commits message, confirms it with you, then commits. The convention is in `skills/commit/references/conventional-commits.md`.

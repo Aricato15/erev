@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-  Create a new project in D:\claude_projects from _templates\project.
+  Create a new project in the workspace root (the parent of _scripts\) from _templates\project.
 
 .EXAMPLE
   powershell -ExecutionPolicy Bypass -File _scripts\new-project.ps1 -Name my-app -Description "Todo app" -Stack "Python (uv)"
