@@ -15,8 +15,11 @@ Each top-level folder that doesn't start with `_` is a separate project and its 
 - Put specs and plans in `docs/`, and architecture decisions in `docs/decisions/NNNN-title.md`.
 
 ## Conventions
-- Python: use `uv` (`uv init`, `uv add`, `uv run`). Don't use bare pip or a global python.
-- Node: use the package manager the project's lockfile shows. Default to npm.
+- Contained environments: every project keeps its environment and dependencies inside its own folder, whatever the stack. Never install a project's dependencies globally, into the workspace root or into a sibling project. Shared download caches (uv's cache, npm's cache) are fine, because they aren't environments.
+  - Python: use `uv` (`uv init`, `uv add`, `uv run`). The venv is `.venv/`, next to the project's `pyproject.toml`, and `uv sync` creates it. Pin the version with `uv python pin <version>` and commit `.python-version`. Don't use bare pip, `pip install --user`, `python -m venv` or a global python.
+  - Node: use the package manager the project's lockfile shows. Default to npm. `node_modules/` sits next to the project's `package.json` (in a frontend subfolder, if that's where it is). Run tools through npm scripts or `npx`, never `npm install -g`. Commit the lockfile.
+  - Other stacks: use the toolchain's project-local mode. If the toolchain only supports a global location, write that under Gotchas in the project's `CLAUDE.md`.
+  - The project's `.gitignore` must cover its environment folders.
 - Server ports: every server a project runs, including dev servers, must listen on a port in the range for its category:
 
   | Category | Port range |

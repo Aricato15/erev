@@ -5,6 +5,15 @@
 ## Stack
 {{STACK}}
 
+## Environment
+Keep this project's environment and dependencies inside this folder. Don't install them globally, into the workspace root or into another project.
+<!-- Fill in where the environment lives for this stack and what creates it, e.g.
+     Python: `.venv/` next to `pyproject.toml`, created by `uv sync`; version pinned in `.python-version`
+     Node:   `node_modules/` next to `package.json`, created by `npm install`; no `npm install -g` -->
+- Location: TODO
+- Created by: TODO
+- Must be listed in `.gitignore`.
+
 ## Commands
 <!-- Fill in the exact commands. Claude uses these to build, test and verify. -->
 - Install: `TODO`

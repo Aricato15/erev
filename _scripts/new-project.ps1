@@ -85,4 +85,4 @@ if ($existing -and -not $existing.EndsWith("`n")) { $existing += "`r`n" }
 [System.IO.File]::WriteAllText($index, $existing + $row + "`r`n", $utf8NoBom)
 
 Write-Host "Created $dest"
-Write-Host "Next: cd `"$dest`"; claude   (then fill in CLAUDE.md > Commands)"
+Write-Host "Next: cd `"$dest`"; claude   (then fill in CLAUDE.md > Environment and Commands)"

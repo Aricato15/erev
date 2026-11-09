@@ -19,7 +19,8 @@ Create a new project in this workspace.
    If it fails, show the error and stop. Don't scaffold by hand.
 3. **Tailor it to the stack.** Only do this if the user wants the toolchain set up now; ask once.
    - Initialise the toolchain inside the project, e.g. `uv init` for Python or `npm init -y` for Node.
-   - Replace the `TODO` lines under **Commands** in `<name>/CLAUDE.md` with the real install, run, test and lint commands.
+   - Keep the environment inside the project folder (see "Contained environments" in the workspace `CLAUDE.md`). For Python, run `uv python pin <version>` and then `uv sync`, so that `.venv/` is created in the project. For Node, install locally only, never with `-g`. Check that the project's `.gitignore` covers the environment folder, and add it if not.
+   - Replace the `TODO` lines under **Environment** and **Commands** in `<name>/CLAUDE.md` with where the environment lives, what creates it, and the real install, run, test and lint commands.
    - Add matching allow rules to `<name>/.claude/settings.json`, e.g. `"Bash(uv run:*)"` or `"Bash(npm run:*)"`, `"Bash(npm test:*)"`.
    - Commit in the new project: `git -C <name> add -A`, then `git -C <name> commit -m "Set up <stack> toolchain"`.
 4. **Report back** with the path, what was created, and the next step: `cd <name>` then `claude`. Mention that project-specific skills go in `<name>/.claude/skills/<skill>/SKILL.md` and agents in `<name>/.claude/agents/<agent>.md`.
